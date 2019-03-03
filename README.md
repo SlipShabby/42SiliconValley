@@ -1,7 +1,7 @@
 # 42SiliconValley
 
 My implementation of some of the Standard C Library functions including some additional. 
-This README.md was inspired by @gguarnay (https://github.com/gguarnay), so enjoy and check his git (https://github.com/gguarnay?tab=repositories).
+This README.md and actually all the repository was inspired by @gguarnay (https://github.com/gguarnay), so enjoy and check his git (https://github.com/gguarnay?tab=repositories).
 
 ## Table of Contents
 * [What is libft?](#what-is-libft)
