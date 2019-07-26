@@ -1,0 +1,93 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ajulanov <ajulanov@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/06/02 16:03:11 by ajulanov          #+#    #+#              #
+#    Updated: 2019/06/05 16:20:55 by ajulanov         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME=FdF
+
+# exclude the error with the same named files
+
+.PHONY: all clean fclean re
+
+# compilation
+
+C=gcc
+FLAGS=-Wall -Werror -Wextra -g
+FRAM=-framework OpenGL -framework AppKit
+
+# directories and links
+
+FT=./libft/
+FT_LIB=./$(addprefix $(FT), libft.a)
+FT_INC=-I ./libft
+FT_LNK=-L ./libft -l ft
+
+MLX=./minilibx/
+MLX_LIB= ./$(addprefix $(MLX), libmlx.a)
+MLX_INC =-I $(MLX)
+MLX_LNK=-L $(MLX_LIB) -lmlx $(FRAM)
+
+INC_DIR=./includes/
+OBJ_DIR=./obj/
+SRC_DIR=./src/
+#OBJ_NAME = $(FILES:.c=.o)
+# source/obj files 
+FILES			= main.c
+
+SRC=$(addprefix $(SRC_DIR), $(FILES))
+BINARY=$(addprefix $(OBJ_DIR), $(FILES))
+
+# colors
+YELLOW      = \033[1;33m
+BLUE        = \033[1;34m
+CYAN        = \033[1;36m
+WHITE       = \033[1;37m
+
+# rules
+
+all: path $(MLX_LIB) $(NAME)
+# all: path $(FT_LIB) $(MLX_LIB) $(NAME)
+
+# @echo "$(GREEN) creating the obj folder... $(CYAN)"
+
+path:
+	mkdir -p $(OBJ_DIR)
+
+# @echo "$(BLUE) creating the project... $(CYAN)"
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	$(C) $(MLX_INC) -o $@ -c $<
+	gcc -o executable src/main.c -L minilibx/ -lmlx -framework OpenGL -framework AppKit
+	# $(C) $(FLAGS) -I$(INC_DIR) $(MLX_INC) $(FT_INC) -o $@ -c $<
+	# make -C $(FT)
+	make -C $(MLX)
+	
+$(NAME): $(BINARY)
+	$(C) $(BINARY) $(MLX_LNK) -o $(NAME)
+	# $(C) $(FLAGS) $(BINARY) $(MLX_LNK) $(FT_LNK) -o $(NAME)
+	ar rc $(NAME) $(BINARY)
+	ranlib $(NAME)
+	# gcc -o executable src/main.c -L minilibx/ -lmlx -framework OpenGL -framework AppKit
+
+	# @echo "$(BLUE) FdF successfully compiled $(CYAN)"
+
+clean:
+	# @echo "$(YELLOW) cleaning... $(CYAN)"
+	rm -rf $(OBJ_DIR)
+	make -C $(FT) clean
+	make -C $(MLX) clean
+
+fclean: clean
+	# @echo "$(YELLOW) fcleaning... $(CYAN)"
+	rm -rf $(OBJ_DIR)
+	rm -f $(NAME)
+	make -C $(FT) fclean
+
+re: fclean all
