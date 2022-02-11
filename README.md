@@ -7,4 +7,4 @@ Xavier Niel, the founder of the Iliad Group, funds 42 Silicon Valley.
 This software engineering school takes its name from the book "The Hitchhiker's Guide to the Galaxy" where the answer to "the ultimate question of life, the universe, and everything" is the number 42.
 
 
-![plot](IMG_2786.HEIC)
+![plot](https://github.com/SlipShabby/42SiliconValley/blob/master/IMG_2786.HEIC)
