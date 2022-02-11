@@ -27,3 +27,8 @@ FdF is  interesting 3D grapics project. It is helpful to divide this big pie int
 
 ~ step 3: draw map
     - 
+
+
+Bug fixing sometimes can be very entertaining:
+
+()
