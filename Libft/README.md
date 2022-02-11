@@ -3,6 +3,8 @@
 My implementation of the Standard C Library functions including some additional. 
 The goal of the project is to learn how to create your custom library for any future projects. Also it is a great way to learn how standard functions works behind the scene and customize them for your needs.
 
+Disclaimer: * Reinventing the wheel is bad, 42 makes us do this just so we can have a deeper understanding of data structures and basic algorithms. At 42 we're not allowed to use some standard libraries on our projects, so we have to keep growing this library with our own functions as we go farther in the program.* 
+
 ## Table of Contents
 * [What is libft?](#what-is-libft)
 * [What's in it?](#whats-in-it)
@@ -11,8 +13,6 @@ The goal of the project is to learn how to create your custom library for any fu
 
 ## What is libft?
 [Libft](libft.en.pdf) is an individual project at [42](https://www.42.us.org/) that requires us to re-create some standard C library functions including some additional ones that can be used later to build a library of useful functions for the rest of the program.
-
-Disclaimer: *Reinventing the wheel is bad, 42 makes us do this just so we can have a deeper understanding of data structures and basic algorithms. At 42 we're not allowed to use some standard libraries on our projects, so we have to keep growing this library with our own functions as we go farther in the program.* 
 
 ## What's in it?
 As you can see from the [Project instructions], there are 3 sections:
@@ -69,6 +69,3 @@ To clean up the binary files, you may call `make clean`
 ## How do I test it?
  - Use [42FileChecker](https://github.com/jgigault/42FileChecker)
  - Use [Moulibft](https://www.moulibft.com/)
-
-
-This README.md was inspired by @gguarnay (https://github.com/gguarnay).
