@@ -1,7 +1,7 @@
 # 42SiliconValley - Libft
 
-My implementation of some of the Standard C Library functions including some additional. 
-This README.md and actually all the repository was inspired by @gguarnay (https://github.com/gguarnay), so enjoy and check his git (https://github.com/gguarnay?tab=repositories).
+My implementation of the Standard C Library functions including some additional. 
+The goal of the project is to learn how to create your custom library for any future projects. Also it is a great way to learn how standard functions works behind the scene and customize them for your needs.
 
 ## Table of Contents
 * [What is libft?](#what-is-libft)
@@ -69,3 +69,6 @@ To clean up the binary files, you may call `make clean`
 ## How do I test it?
  - Use [42FileChecker](https://github.com/jgigault/42FileChecker)
  - Use [Moulibft](https://www.moulibft.com/)
+
+
+This README.md was inspired by @gguarnay (https://github.com/gguarnay).
